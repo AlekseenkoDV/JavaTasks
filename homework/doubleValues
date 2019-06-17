@@ -1,0 +1,38 @@
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        // Считать строки с консоли и объявить ArrayList list тут
+        /**
+         * Первым, что мы сделали это создали метод ввода с клавиатуры;
+         * Второе, мы создали строковый список list и добавили в него 10 строк;
+         */
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        ArrayList<String> list = new ArrayList<String>();
+        for (int i = 0; i < 10; i++) {
+            String s = reader.readLine();
+            list.add(s);
+        }
+        //System.out.println(list);
+        /**
+         * Данное вырожение говорит о том, что список result = list;
+         * То есть при вызове этого списка мы получим вывод значений, которые добавили в список list;
+         * В цикле мы выводим каждое новое значение с новой строки по возрастанию;
+         */
+        ArrayList<String> result = doubleValues(list);
+        // Вывести на экран result
+        for(int i = 0; i < result.size(); i++) {
+            System.out.println(result.get(i));
+        }
+    }
+
+    public static ArrayList<String> doubleValues(ArrayList<String> list) {
+        /**
+         * В этом методе мы создали цикл, который удваивает входящее в список значения.
+         */
+        //напишите тут ваш код
+        for(int i = list.size() - 1; i >= 0; i--) {
+            list.add(i, list.get(i));
+        }
+
+        return list;
+    }
+}

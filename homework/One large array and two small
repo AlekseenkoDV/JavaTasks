@@ -1,0 +1,42 @@
+/*
+Один большой массив и два маленьких
+
+1. Создать массив на 20 чисел.
+2. Ввести в него значения с клавиатуры.
+3. Создать два массива на 10 чисел каждый.
+4. Скопировать большой массив в два маленьких: половину чисел в первый маленький, вторую половину во второй маленький.
+5. Вывести второй маленький массив на экран, каждое значение выводить с новой строки.
+
+1. Программа должна создавать большой массив на 20 целых чисел.
+2. Программа должна считывать с клавиатуры 20 чисел для большого массива.
+3. Программа должна создавать два маленьких массива на 10 чисел каждый.
+4. Программа должна скопировать одну половину большого массива в первый маленький, а вторую - во второй и вывести его на экран.
+
+
+//1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+//0 1 2 3 4 5 6 7 8 9  10 11 12 13 14 15 16 17 18 19 - индекс
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int[] bigArray = new int[20];
+        for (int y = 0; y < bigArray.length; y++) {
+            bigArray[y] = Integer.parseInt(reader.readLine());
+        }
+        int[] miniarray_1 = new int[10];
+        for (int i = 0; i < miniarray_1.length; i++) {
+            miniarray_1 = Arrays.copyOfRange(bigArray, 0, 10);
+            System.out.println(("Первый маленький массив содержит значения: " + miniarray_1[i]));
+        }
+
+        System.out.println(" ");
+
+        int[] miniarray_2 = new int[10];
+        for (int i = 0; i < miniarray_2.length; i++) {
+            miniarray_2 = Arrays.copyOfRange(bigArray, 10, 20);
+            System.out.println(("Второй маленький массив содержит значения: " + miniarray_2[i]));
+        }
+    }
+}

@@ -1,0 +1,18 @@
+/* 
+KissMyShinyMetalAss
+
+Создать класс KissMyShinyMetalAss
+Создать к нему объект и вывести на экран.
+
+*/
+
+public class Solution {
+    public static class  KissMyShinyMetalAss {
+    }
+
+    public static void main(String[] args) {
+        //напишите тут ваш код
+        KissMyShinyMetalAss myAss = new  KissMyShinyMetalAss();
+        System.out.println(myAss);
+    }
+}

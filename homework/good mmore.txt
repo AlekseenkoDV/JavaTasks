@@ -1,0 +1,25 @@
+/* 
+Хорошего много не бывает
+
+Ввести с клавиатуры строку и число N.
+Вывести на экран строку N раз используя цикл while. Каждое значение с новой строки.
+*/
+
+import java.io.*;
+import java.net.Inet4Address;
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        //напишите тут ваш код
+        BufferedReader buffer = new BufferedReader (new InputStreamReader(System.in));
+        String s = buffer.readLine();
+        int n = Integer.parseInt(buffer.readLine());
+        //int i = 0;
+        while (n > 0) {
+            System.out.println(s);
+            n--;
+
+
+        }
+    }
+}

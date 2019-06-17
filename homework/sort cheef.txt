@@ -1,0 +1,39 @@
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+           //напишите тут ваш код
+        int a = Integer.parseInt(reader.readLine());
+        int b = Integer.parseInt(reader.readLine());
+        int c = Integer.parseInt(reader.readLine());
+        int d = Integer.parseInt(reader.readLine());
+        int e = Integer.parseInt(reader.readLine());
+
+        int[] arr = {a, b, c, d, e};
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[i - 1]) {
+                swap(arr, i, i-1);
+            }
+        }
+        boolean needSort = true;
+        while (needSort) {
+            needSort = false;
+            for (int i = 1; i < arr.length; i++) {
+                if(arr[i] < arr[i - 1]) {
+                    swap(arr, i, i - 1);
+                    needSort = true;
+                }
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+
+    }
+
+    public static void swap(int[] array, int x, int y) {
+        int sb = array[x];
+        array[x] = array[y];
+        array[y] = sb;
+    }
+}
